@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.farmingdale.csc311.LoginController"
+            stylesheets="@styles.css"
+            styleClass="login-root">
+    <left>
+        <VBox alignment="CENTER_LEFT" spacing="28" prefWidth="495" styleClass="login-brand-panel">
+            <padding>
+                <Insets top="70" right="58" bottom="70" left="58" />
+            </padding>
+            <StackPane styleClass="brand-mark, brand-mark-light">
+                <Label text="SCM" styleClass="brand-initials" />
+            </StackPane>
+            <VBox spacing="12">
+                <Label text="Plan less.&#10;Learn more." styleClass="login-brand-title" />
+                <Label text="A simple place to view courses, assignments, and the work ahead." wrapText="true" styleClass="login-brand-copy" />
+            </VBox>
+            <Region VBox.vgrow="ALWAYS" />
+            <Label text="Student Course Manager" styleClass="login-brand-footer" />
+        </VBox>
+    </left>
+    <center>
+        <StackPane>
+            <VBox alignment="CENTER_LEFT" spacing="18" maxWidth="390" styleClass="login-card">
+                <padding>
+                    <Insets top="42" right="42" bottom="42" left="42" />
+                </padding>
+                <VBox spacing="6">
+                    <Label text="Welcome back" styleClass="screen-title" />
+                    <Label text="Sign in to open your course dashboard." styleClass="screen-subtitle" />
+                </VBox>
+                <Separator />
+                <VBox spacing="7">
+                    <Label fx:id="usernameLabel" text="_Username" mnemonicParsing="true" styleClass="field-label" />
+                    <TextField fx:id="usernameField" promptText="campus username" />
+                </VBox>
+                <VBox spacing="7">
+                    <Label fx:id="passwordLabel" text="_Password" mnemonicParsing="true" styleClass="field-label" />
+                    <PasswordField fx:id="passwordField" promptText="password" onAction="#handleLogin" />
+                </VBox>
+                <Label fx:id="statusLabel" wrapText="true" styleClass="status-label" />
+                <HBox spacing="12">
+                    <Button text="LOGIN" onAction="#handleLogin" defaultButton="true" maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="primary-button" />
+                    <Button text="CANCEL" onAction="#handleCancel" cancelButton="true" maxWidth="Infinity" HBox.hgrow="ALWAYS" styleClass="secondary-button" />
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>
