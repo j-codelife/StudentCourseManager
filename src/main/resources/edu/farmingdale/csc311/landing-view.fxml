@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.farmingdale.csc311.LandingController"
+            stylesheets="@styles.css"
+            styleClass="dashboard-root">
+    <top>
+        <VBox>
+            <MenuBar styleClass="app-menu-bar">
+                <menus>
+                    <Menu text="File">
+                        <items>
+                            <MenuItem text="Sign Out" onAction="#handleSignOut" />
+                            <SeparatorMenuItem />
+                            <MenuItem text="Exit" onAction="#handleExit" />
+                        </items>
+                    </Menu>
+                    <Menu text="Edit">
+                        <items>
+                            <MenuItem text="Preferences" disable="true" />
+                        </items>
+                    </Menu>
+                    <Menu text="Help">
+                        <items>
+                            <MenuItem text="About" onAction="#handleAbout" />
+                        </items>
+                    </Menu>
+                </menus>
+            </MenuBar>
+            <HBox alignment="CENTER_LEFT" spacing="16" styleClass="dashboard-header">
+                <padding>
+                    <Insets top="24" right="34" bottom="24" left="34" />
+                </padding>
+                <VBox spacing="4">
+                    <Label text="Course Dashboard" styleClass="dashboard-title" />
+                    <Label text="Fall semester overview" styleClass="dashboard-subtitle" />
+                </VBox>
+                <Region HBox.hgrow="ALWAYS" />
+                <Label text="4 COURSES" styleClass="summary-chip" />
+                <Label text="4 UPCOMING" styleClass="summary-chip, summary-chip-accent" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <HBox spacing="24" styleClass="dashboard-content">
+            <padding>
+                <Insets top="28" right="34" bottom="34" left="34" />
+            </padding>
+            <VBox spacing="14" HBox.hgrow="ALWAYS" styleClass="table-card">
+                <VBox spacing="3">
+                    <Label text="Courses" styleClass="section-title" />
+                    <Label text="Your current schedule" styleClass="section-caption" />
+                </VBox>
+                <TableView fx:id="coursesTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="courseCodeColumn" text="COURSE" prefWidth="95" />
+                        <TableColumn fx:id="courseNameColumn" text="TITLE" prefWidth="210" />
+                        <TableColumn fx:id="meetingColumn" text="MEETS" prefWidth="175" />
+                    </columns>
+                </TableView>
+            </VBox>
+            <VBox spacing="14" HBox.hgrow="ALWAYS" styleClass="table-card">
+                <VBox spacing="3">
+                    <Label text="Assignments" styleClass="section-title" />
+                    <Label text="What is coming up next" styleClass="section-caption" />
+                </VBox>
+                <TableView fx:id="assignmentsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="assignmentColumn" text="ASSIGNMENT" prefWidth="210" />
+                        <TableColumn fx:id="assignmentCourseColumn" text="COURSE" prefWidth="100" />
+                        <TableColumn fx:id="dueColumn" text="DUE" prefWidth="100" />
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_LEFT" styleClass="status-bar">
+            <padding>
+                <Insets top="9" right="34" bottom="9" left="34" />
+            </padding>
+            <Label text="Ready" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label text="Student Course Manager • CSC 311" />
+        </HBox>
+    </bottom>
+</BorderPane>
