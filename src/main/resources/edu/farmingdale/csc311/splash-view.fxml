@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="edu.farmingdale.csc311.SplashController"
+            stylesheets="@styles.css"
+            styleClass="splash-root">
+    <center>
+        <VBox alignment="CENTER" spacing="24" maxWidth="640">
+            <padding>
+                <Insets top="48" right="64" bottom="48" left="64" />
+            </padding>
+            <StackPane styleClass="brand-mark">
+                <Label text="SCM" styleClass="brand-initials" />
+            </StackPane>
+            <VBox alignment="CENTER" spacing="8">
+                <Label text="STUDENT COURSE MANAGER" styleClass="splash-title" />
+                <Label text="Keep your semester organized in one place." styleClass="splash-subtitle" />
+            </VBox>
+            <VBox alignment="CENTER" spacing="10" maxWidth="470">
+                <ProgressBar fx:id="loadingProgress" prefWidth="470" styleClass="splash-progress" />
+                <Label fx:id="progressLabel" text="Loading your workspace..." styleClass="loading-label" />
+            </VBox>
+        </VBox>
+    </center>
+    <bottom>
+        <Label text="CSC 311 • Advanced Programming" BorderPane.alignment="CENTER" styleClass="splash-footer">
+            <BorderPane.margin>
+                <Insets bottom="24" />
+            </BorderPane.margin>
+        </Label>
+    </bottom>
+</BorderPane>
