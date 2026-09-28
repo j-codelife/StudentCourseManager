@@ -30,11 +30,5 @@
             </VBox>
         </VBox>
     </center>
-    <bottom>
-        <Label text="CSC 311 • Advanced Programming" BorderPane.alignment="CENTER" styleClass="splash-footer">
-            <BorderPane.margin>
-                <Insets bottom="24" />
-            </BorderPane.margin>
-        </Label>
-    </bottom>
+
 </BorderPane>
